@@ -1,15 +1,11 @@
+* {
+    box-sizing: border-box;
+  }
+
 .roboto-font {
     font-family: 'Roboto', sans-serif;
-}
-
-.righteous-font-categories {
-    font-family: 'Righteous', cursive;
     font-style: normal;
     font-weight: normal;
-    font-size: 26px;
-    line-height: 32px;
-    letter-spacing: 0.018em;
-    color: #333333;
 }
 
 h1 {
@@ -20,4 +16,51 @@ h1 {
     line-height: 55px;
     letter-spacing: -0.012em;
     color: #FFFFFF;
+}
+
+h2 {
+    font-family: 'Righteous', cursive;
+    font-style: normal;
+    font-weight: normal;
+    font-size: 26px;
+    line-height: 32px;
+    letter-spacing: 0.018em;
+    color: #333333;
+}
+
+h3 {
+    font-family: 'Righteous', cursive;
+    font-style: normal;
+    font-weight: normal;
+    font-size: 26px;
+    line-height: 32px;
+    letter-spacing: 0.018em;
+    color: #333333;
+}
+
+h4 {
+    font-family: 'Roboto', sans-serif;
+    font-style: normal;
+    font-weight: bold;
+    font-size: 16px;
+    line-height: 19px;
+    color: #333333;
+}
+
+h5 {
+    font-family: 'Roboto', sans-serif;
+    font-style: normal;
+    font-weight: 300;
+    font-size: 15px;
+    line-height: 18px;
+    color: #A6A6A6;
+}
+
+h6 {
+    font-family: 'Roboto', sans-serif;
+    font-style: normal;
+    font-weight: normal;
+    font-size: 16px;
+    line-height: 19px;
+    color: #000000;
 }
