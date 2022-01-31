@@ -42,7 +42,7 @@ function unselectDrink () {
 function selectDrink (drinkName) {
     unselectDrink ();
     const selectedDrink = document.querySelector("." + drinkName);
-    selectedDrink.classList.add("selected");
+    selectedDrink.classList.add("selected")
     drinkIsSelected = true;
     closeOrder ()
 }
@@ -68,8 +68,10 @@ function selectDessert (dessertName) {
 // Funções do botão de fechar pedido.
 function closeOrder () {
     if (dishIsSelected === true && drinkIsSelected === true && dessertIsSelected === true) {
+        console.log("oi")
         const enableButton = document.querySelector(".button-shape");
         enableButton.classList.add("enabledButton");
+        enableButton.disabled = false;
         const enabledButtoonText = document.querySelector(".button-shape h3");
         enabledButtoonText.innerHTML = "Finalizar pedido";
     }
