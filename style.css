@@ -82,6 +82,9 @@ header {
     flex-direction: column;
     justify-content: center;
     align-items: flex-start;
+    position: fixed;
+    top: 0;
+    left: 0;
 }
 
 .category {
@@ -121,7 +124,6 @@ img {
     margin-bottom: 8px;
     object-fit: cover;
     align-self: flex-start;
-
 }
 
 footer {
@@ -136,6 +138,9 @@ footer {
     display: flex;
     justify-content: center;
     align-items: center;
+    position: fixed;
+    bottom: 0;
+    left: 0;
 }
 
 .button-shape {
@@ -155,6 +160,10 @@ footer {
     line-height: 23px;
 }
 
-.selecionado {
+.selected {
     border: 4px solid #32B72F;
+}
+
+.enabledButton {
+    background-color: #32B72F;
 }

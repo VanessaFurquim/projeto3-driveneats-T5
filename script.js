@@ -1,42 +1,66 @@
-// funções para seleção do prato.
-function deselecionarPrato () {
-    const pratoSelecionado = document.querySelector(".dish .selecionado");
-    if (pratoSelecionado !== null) {
-        pratoSelecionado.classList.remove("selecionado");
+// Variáveis globais para habilitar botão de finalizar pedido.
+let dishIsSelected = false;
+let drinkIsSelected = false;
+let dessertIsSelected = false;
+
+
+// Funções para seleção do prato.
+function unselectDish () {
+    const selectedDish = document.querySelector(".dish .selected");
+    if (selectedDish !== null) {
+        selectedDish.classList.remove("selected");
     }
 }
 
-function selecionarPrato (dishName) {
-    deselecionarPrato ();
-    const pratoSelecionado = document.querySelector("." + dishName);
-    pratoSelecionado.classList.add("selecionado");
+function selectDish (dishName) {
+    unselectDish ();
+    const selectedDish = document.querySelector("." + dishName);
+    selectedDish.classList.add("selected");
+    dishIsSelected = true;
+    closeOrder ()
 }
 
 
-// funções para seleção da bebida.
-function deselecionarBebida () {
-    const bebidaSelecionada = document.querySelector(".drink .selecionado");
-    if (bebidaSelecionada !== null) {
-        bebidaSelecionada.classList.remove("selecionado");
+// Funções para seleção da bebida.
+function unselectDrink () {
+    const selectedDrink = document.querySelector(".drink .selected");
+    if (selectedDrink !== null) {
+        selectedDrink.classList.remove("selected");
     }
 }
 
-function selecionarBebida (drinkName) {
-    deselecionarBebida ();
-    const bebidaSelecionada = document.querySelector("." + drinkName);
-    bebidaSelecionada.classList.add("selecionado");
+function selectDrink (drinkName) {
+    unselectDrink ();
+    const selectedDrink = document.querySelector("." + drinkName);
+    selectedDrink.classList.add("selected");
+    drinkIsSelected = true;
+    closeOrder ()
 }
 
-// funções para seleção da sobremesa.
-function deselecionarSobremesa () {
-    const sobremesaSelecionada = document.querySelector(".dessert .selecionado");
-    if (sobremesaSelecionada !== null) {
-        sobremesaSelecionada.classList.remove("selecionado");
+
+// Funções para seleção da sobremesa.
+function unselectDessert () {
+    const selectedDessert = document.querySelector(".dessert .selected");
+    if (selectedDessert !== null) {
+        selectedDessert.classList.remove("selected");
     }
 }
 
-function selecionarSobremesa (dessertName) {
-    deselecionarSobremesa ();
-    const sobremesaSelecionada = document.querySelector("." + dessertName);
-    sobremesaSelecionada.classList.add("selecionado");
+function selectDessert (dessertName) {
+    unselectDessert ();
+    const selectedDessert = document.querySelector("." + dessertName);
+    selectedDessert.classList.add("selected");
+    dessertIsSelected = true;
+    closeOrder ()
+}
+
+
+// Funções do botão de fechar pedido.
+function closeOrder () {
+    if (dishIsSelected === true && drinkIsSelected === true && dessertIsSelected === true) {
+        const enableButton = document.querySelector(".button-shape");
+        enableButton.classList.add("enabledButton");
+        const enabledButtoonText = document.querySelector(".button-shape h3");
+        enabledButtoonText.innerHTML = "Finalizar pedido";
+    }
 }
