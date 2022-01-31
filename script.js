@@ -1,7 +1,17 @@
-// Variáveis globais para habilitar botão de finalizar pedido.
+// Variáveis globais para habilitar botão de fechar pedido.
 let dishIsSelected = false;
 let drinkIsSelected = false;
 let dessertIsSelected = false;
+
+
+// Variáveis globais para mensagem de fechar pedido.
+let chosenDish;
+let chosenDrink;
+let chosenDessert;
+let dishPrice;
+let drinkPrice;
+let dessertPrice;
+let totalAmount;
 
 
 // Funções para seleção do prato.
@@ -63,4 +73,25 @@ function closeOrder () {
         const enabledButtoonText = document.querySelector(".button-shape h3");
         enabledButtoonText.innerHTML = "Finalizar pedido";
     }
+}
+
+function whatsappMessage () {
+    chosenDish = document.querySelector(".dish .selected h4").innerHTML;
+    dishPrice = document.querySelector(".dish .selected h6").innerHTML.replace("R$","").replace(",",".");;
+    chosenDrink = document.querySelector(".drink .selected h4").innerHTML;
+    drinkPrice = document.querySelector(".drink .selected h6").innerHTML.replace("R$","").replace(",",".");;
+    chosenDessert = document.querySelector(".dessert .selected h4").innerHTML;
+    dessertPrice = document.querySelector(".dessert .selected h6").innerHTML.replace("R$","").replace(",",".");;
+
+    totalAmount = parseInt((dishPrice) + parseInt(drinkPrice) + parseInt(dessertPrice));
+
+    let message = `Olá, gostaria de fazer o pedido:
+                   - Prato: ${chosenDish}
+                   - Bebida: ${chosenDrink}
+                   - Sobremesa: ${chosenDessert}
+                   Total: R$ ${totalAmount.toFixed(2).replace('.',',')}`;
+
+    let codedMessage = encodeURIComponent(message);
+    const whatsappLink = `https://wa.me/5521995156377?text=${codedMessage}`;
+    window.location.href = whatsappLink;
 }
